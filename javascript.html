@@ -8,8 +8,12 @@
 <body>
     <div id="display"></div>
     <script>
-    /* ik heb een text gemaakt die binnen een bepaalde tijd  veranderd in een andere text */
-    const sentenace = "Meester piet werkt het zo?"
+    /* met deze const 'sentenace' kan ik de text "Piet kwam 2x voor!"
+    automatisch laten veranderen in "Meester piet werkt het zo? piet" omdat ik
+    de const "sentenace" verplaats met "new_sentenace".
+    tegelijke tijd heb ik een functie erin gemaakt die optelt hoevaak een woord of letter
+    erin voorkomt.*/
+    const sentenace = "Meester piet werkt het zo? piet"
     let count = (sentenace.match(/piet/g) || []).length;    
     document.getElementById("display").innerHTML = `Piet kwam ${count} x voor!`
     
@@ -25,11 +29,19 @@
 
 </script>
 <button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
+onclick="chrono()">
 Click me to display Date and Time.</button>
 
 <p id="demo"></p>
 
+</body>
+<script>/* hiermee heb ik een knop die de huidige tijd laat zien van het wereld deel 
+waar je in bent*/
+
+const chrono = () => {
+  return document.getElementById('demo').innerHTML = Date()
+}
+</script>
 <p id="demo"></p>
 <p id="math"></p>
 <p id="total"></p>
@@ -57,12 +69,15 @@ document.getElementById("math2").innerHTML = math2;
 
 </script>
 
+
 <form name="rn">
     <input type="text" id="tb" name="tb" />
     <input type="button" value="Random Number!" onclick="Random();" />
 </form>
 
-<script type="text/javascript">
+<script type="text/javascript"> /*hier bij heb ik een random number generator gebouwd waarmee 
+als je op de knop drukt een random getal krijgt tussen de 100000 */
+   
 function Random() {
         const rnd = Math.floor(Math.random() * 100000);
         document.getElementById('tb').value = rnd;
