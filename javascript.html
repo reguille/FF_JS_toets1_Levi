@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display"></div>
+    <script>
+    /* ik heb een text gemaakt die binnen een bepaalde tijd  veranderd in een andere text */
+    const sentenace = "Meester piet werkt het zo?"
+    let count = (sentenace.match(/piet/g) || []).length;    
+    document.getElementById("display").innerHTML = `Piet kwam ${count} x voor!`
+    
+    const renderCorrectName = () => {
+        const new_sentenace = sentenace.replace("piet", "Arjan")
+        document.getElementById("display").innerHTML = new_sentenace
+    }
+    setTimeout(function(){renderCorrectName()}, 5000);
+
+
+
+
+
+</script>
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+<p id="demo"></p>
+<p id="math"></p>
+<p id="total"></p>
+<p id="math2"></p>
+<script>
+    /* Ik maak een som 5 + 2 en het resultaat komt op je scherm*/      
+/*const x = 5;
+const y = 2;
+const z = x + y;
+const calu = `5 + 2 = ${z}`
+document.getElementById("demo").innerHTML = calu;
+
+const math = Math.round(2.5)
+document.getElementById("math").innerHTML = math;
+
+const number1 = 42;
+const number2 = 100;
+const total = number1 + number2;   
+
+document.getElementById("total").innerHTML = total;
+
+
+const math2 = Math.floor(Math.random() * 10) + 1 //the + 1 makes it so its not 0.
+document.getElementById("math2").innerHTML = math2;
+
+</script>
+
+<form name="rn">
+    <input type="text" id="tb" name="tb" />
+    <input type="button" value="Random Number!" onclick="Random();" />
+</form>
+
+<script type="text/javascript">
+function Random() {
+        const rnd = Math.floor(Math.random() * 100000);
+        document.getElementById('tb').value = rnd;
+    }
+
+
+
+
+document.getElementById('tb').value = Random()
+</script>
+</body>
+</html>
